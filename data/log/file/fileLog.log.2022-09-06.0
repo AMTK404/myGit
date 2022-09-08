@@ -1,0 +1,258 @@
+2022-09-06 14:53:23,435 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 48500 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 14:53:23,437 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 14:53:23,765 INFO (Log.java:170)- Logging initialized @961ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 14:53:23,819 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8080
+2022-09-06 14:53:23,820 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 14:53:23,834 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 14:53:23,835 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 377 ms
+2022-09-06 14:53:23,870 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 14:53:23,870 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 14:53:23,870 INFO (HouseKeeper.java:132)- node0 Scavenging every 660000ms
+2022-09-06 14:53:23,875 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@3935e9a8{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8080.4627782315091303238/],AVAILABLE}
+2022-09-06 14:53:23,875 INFO (Server.java:415)- Started @1071ms
+2022-09-06 14:53:23,974 WARN (AbstractApplicationContext.java:591)- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'logController' method 
+com.lyh.controller.LogController#hello(int)
+to {GET [/users/hello]}: There is already 'helloController' bean method
+com.lyh.controller.HelloController#hello() mapped.
+2022-09-06 14:53:23,976 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 14:53:23,977 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@3935e9a8{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8080.4627782315091303238/],STOPPED}
+2022-09-06 14:53:23,983 INFO (ConditionEvaluationReportLoggingListener.java:136)- 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-06 14:53:23,997 ERROR (SpringApplication.java:824)- Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'logController' method 
+com.lyh.controller.LogController#hello(int)
+to {GET [/users/hello]}: There is already 'helloController' bean method
+com.lyh.controller.HelloController#hello() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.lyh.Demo1Application.main(Demo1Application.java:10)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'logController' method 
+com.lyh.controller.LogController#hello(int)
+to {GET [/users/hello]}: There is already 'helloController' bean method
+com.lyh.controller.HelloController#hello() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 16 common frames omitted
+2022-09-06 14:53:59,623 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 25920 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 14:53:59,625 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 14:53:59,969 INFO (Log.java:170)- Logging initialized @935ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 14:54:00,025 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8080
+2022-09-06 14:54:00,027 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 14:54:00,041 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 14:54:00,041 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 396 ms
+2022-09-06 14:54:00,073 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 14:54:00,073 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 14:54:00,074 INFO (HouseKeeper.java:132)- node0 Scavenging every 660000ms
+2022-09-06 14:54:00,078 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@68105edc{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8080.8120418403454902744/],AVAILABLE}
+2022-09-06 14:54:00,078 INFO (Server.java:415)- Started @1045ms
+2022-09-06 14:54:00,212 INFO (ContextHandler.java:2368)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 14:54:00,212 INFO (FrameworkServlet.java:525)- Initializing Servlet 'dispatcherServlet'
+2022-09-06 14:54:00,213 INFO (FrameworkServlet.java:547)- Completed initialization in 1 ms
+2022-09-06 14:54:00,217 INFO (AbstractConnector.java:383)- Stopped ServerConnector@4593ff34{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2022-09-06 14:54:00,217 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 14:54:00,218 INFO (ContextHandler.java:2368)- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-09-06 14:54:00,218 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@68105edc{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8080.8120418403454902744/],STOPPED}
+2022-09-06 14:54:00,219 WARN (AbstractApplicationContext.java:591)- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-09-06 14:54:00,224 INFO (ConditionEvaluationReportLoggingListener.java:136)- 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-06 14:54:00,232 ERROR (LoggingFailureAnalysisReporter.java:40)- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-09-06 14:57:54,146 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 48540 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 14:57:54,148 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 14:57:54,494 INFO (Log.java:170)- Logging initialized @971ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 14:57:54,556 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8080
+2022-09-06 14:57:54,557 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 14:57:54,572 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 14:57:54,572 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 403 ms
+2022-09-06 14:57:54,607 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 14:57:54,608 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 14:57:54,608 INFO (HouseKeeper.java:132)- node0 Scavenging every 660000ms
+2022-09-06 14:57:54,613 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@470a9030{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8080.833698444450545989/],AVAILABLE}
+2022-09-06 14:57:54,613 INFO (Server.java:415)- Started @1091ms
+2022-09-06 14:57:54,761 INFO (ContextHandler.java:2368)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 14:57:54,761 INFO (FrameworkServlet.java:525)- Initializing Servlet 'dispatcherServlet'
+2022-09-06 14:57:54,762 INFO (FrameworkServlet.java:547)- Completed initialization in 1 ms
+2022-09-06 14:57:54,766 INFO (AbstractConnector.java:383)- Stopped ServerConnector@7cd1ac19{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2022-09-06 14:57:54,767 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 14:57:54,767 INFO (ContextHandler.java:2368)- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-09-06 14:57:54,768 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@470a9030{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8080.833698444450545989/],STOPPED}
+2022-09-06 14:57:54,769 WARN (AbstractApplicationContext.java:591)- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-09-06 14:57:54,775 INFO (ConditionEvaluationReportLoggingListener.java:136)- 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-06 14:57:54,784 ERROR (LoggingFailureAnalysisReporter.java:40)- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-09-06 14:59:00,661 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 43244 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 14:59:00,663 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 14:59:00,992 INFO (Log.java:170)- Logging initialized @931ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 14:59:01,045 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8081
+2022-09-06 14:59:01,046 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 14:59:01,060 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 14:59:01,060 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 376 ms
+2022-09-06 14:59:01,091 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 14:59:01,091 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 14:59:01,092 INFO (HouseKeeper.java:132)- node0 Scavenging every 660000ms
+2022-09-06 14:59:01,096 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@470a9030{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.1904382451829976406/],AVAILABLE}
+2022-09-06 14:59:01,096 INFO (Server.java:415)- Started @1035ms
+2022-09-06 14:59:01,225 INFO (ContextHandler.java:2368)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 14:59:01,225 INFO (FrameworkServlet.java:525)- Initializing Servlet 'dispatcherServlet'
+2022-09-06 14:59:01,225 INFO (FrameworkServlet.java:547)- Completed initialization in 0 ms
+2022-09-06 14:59:01,238 INFO (AbstractConnector.java:333)- Started ServerConnector@7cd1ac19{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 14:59:01,238 INFO (JettyWebServer.java:172)- Jetty started on port(s) 8081 (http/1.1) with context path '/'
+2022-09-06 14:59:01,244 INFO (StartupInfoLogger.java:61)- Started Demo1Application in 0.81 seconds (JVM running for 1.183)
+2022-09-06 14:59:40,898 INFO (LogController.java:17)- 进入业务处理
+2022-09-06 14:59:40,898 INFO (LogController.java:18)- age:20
+2022-09-06 14:59:48,107 INFO (AbstractConnector.java:383)- Stopped ServerConnector@7cd1ac19{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 14:59:48,107 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 14:59:48,108 INFO (ContextHandler.java:2368)- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-09-06 14:59:48,109 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@470a9030{application,/,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.1904382451829976406/],STOPPED}
+2022-09-06 15:08:12,652 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 41876 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 15:08:12,653 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 15:08:12,999 INFO (Log.java:170)- Logging initialized @950ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 15:08:13,051 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8081
+2022-09-06 15:08:13,052 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 15:08:13,065 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 15:08:13,065 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 391 ms
+2022-09-06 15:08:13,096 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 15:08:13,096 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 15:08:13,096 INFO (HouseKeeper.java:132)- node0 Scavenging every 660000ms
+2022-09-06 15:08:13,100 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@56193c7d{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.7931686813249193065/],AVAILABLE}
+2022-09-06 15:08:13,101 INFO (Server.java:415)- Started @1052ms
+2022-09-06 15:08:13,237 INFO (ContextHandler.java:2368)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 15:08:13,237 INFO (FrameworkServlet.java:525)- Initializing Servlet 'dispatcherServlet'
+2022-09-06 15:08:13,238 INFO (FrameworkServlet.java:547)- Completed initialization in 1 ms
+2022-09-06 15:08:13,249 INFO (AbstractConnector.java:333)- Started ServerConnector@7048f722{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:08:13,250 INFO (JettyWebServer.java:172)- Jetty started on port(s) 8081 (http/1.1) with context path '/mydev'
+2022-09-06 15:08:13,255 INFO (StartupInfoLogger.java:61)- Started Demo1Application in 0.831 seconds (JVM running for 1.207)
+2022-09-06 15:08:25,563 INFO (LogController.java:17)- 进入业务处理
+2022-09-06 15:08:25,563 INFO (LogController.java:18)- age:20
+2022-09-06 15:09:26,381 INFO (AbstractConnector.java:383)- Stopped ServerConnector@7048f722{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:09:26,381 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 15:09:26,382 INFO (ContextHandler.java:2368)- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-09-06 15:09:26,382 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@56193c7d{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.7931686813249193065/],STOPPED}
+2022-09-06 15:09:51,437 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 28720 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 15:09:51,439 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 15:09:51,768 INFO (Log.java:170)- Logging initialized @914ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 15:09:51,823 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8081
+2022-09-06 15:09:51,824 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 15:09:51,836 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 15:09:51,836 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 377 ms
+2022-09-06 15:09:51,867 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 15:09:51,867 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 15:09:51,868 INFO (HouseKeeper.java:132)- node0 Scavenging every 660000ms
+2022-09-06 15:09:51,872 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@5f8890c2{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.2237767020821380781/],AVAILABLE}
+2022-09-06 15:09:51,872 INFO (Server.java:415)- Started @1019ms
+2022-09-06 15:09:52,000 INFO (ContextHandler.java:2368)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 15:09:52,001 INFO (FrameworkServlet.java:525)- Initializing Servlet 'dispatcherServlet'
+2022-09-06 15:09:52,001 INFO (FrameworkServlet.java:547)- Completed initialization in 0 ms
+2022-09-06 15:09:52,013 INFO (AbstractConnector.java:333)- Started ServerConnector@58a55449{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:09:52,014 INFO (JettyWebServer.java:172)- Jetty started on port(s) 8081 (http/1.1) with context path '/mydev'
+2022-09-06 15:09:52,019 INFO (StartupInfoLogger.java:61)- Started Demo1Application in 0.805 seconds (JVM running for 1.165)
+2022-09-06 15:09:55,469 INFO (LogController.java:17)- 进入业务处理
+2022-09-06 15:09:55,470 INFO (LogController.java:18)- age:20
+2022-09-06 15:11:09,859 INFO (AbstractConnector.java:383)- Stopped ServerConnector@58a55449{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:11:09,859 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 15:11:09,860 INFO (ContextHandler.java:2368)- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-09-06 15:11:09,860 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@5f8890c2{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.2237767020821380781/],STOPPED}
+2022-09-06 15:12:30,625 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 26828 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 15:12:30,627 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 15:12:30,998 INFO (Log.java:170)- Logging initialized @969ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 15:12:31,052 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8081
+2022-09-06 15:12:31,053 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 15:12:31,066 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 15:12:31,067 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 419 ms
+2022-09-06 15:12:31,099 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 15:12:31,099 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 15:12:31,100 INFO (HouseKeeper.java:132)- node0 Scavenging every 600000ms
+2022-09-06 15:12:31,104 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@56193c7d{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.5806931828689065938/],AVAILABLE}
+2022-09-06 15:12:31,105 INFO (Server.java:415)- Started @1076ms
+2022-09-06 15:12:31,238 INFO (ContextHandler.java:2368)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 15:12:31,238 INFO (FrameworkServlet.java:525)- Initializing Servlet 'dispatcherServlet'
+2022-09-06 15:12:31,239 INFO (FrameworkServlet.java:547)- Completed initialization in 1 ms
+2022-09-06 15:12:31,251 INFO (AbstractConnector.java:333)- Started ServerConnector@7048f722{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:12:31,251 INFO (JettyWebServer.java:172)- Jetty started on port(s) 8081 (http/1.1) with context path '/mydev'
+2022-09-06 15:12:31,256 INFO (StartupInfoLogger.java:61)- Started Demo1Application in 0.869 seconds (JVM running for 1.228)
+2022-09-06 15:12:35,131 INFO (LogController.java:17)- 进入业务处理
+2022-09-06 15:12:35,132 ERROR (LogController.java:20)- / by zero
+2022-09-06 15:12:41,911 INFO (AbstractConnector.java:383)- Stopped ServerConnector@7048f722{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:12:41,911 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 15:12:41,912 INFO (ContextHandler.java:2368)- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-09-06 15:12:41,913 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@56193c7d{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.5806931828689065938/],STOPPED}
+2022-09-06 15:24:09,205 INFO (StartupInfoLogger.java:55)- Starting Demo1Application using Java 1.8.0_331 on AMTK with PID 38940 (E:\WorkSpace_SpringBoot\demo1\target\classes started by AMTK404 in E:\WorkSpace_SpringBoot\demo1)
+2022-09-06 15:24:09,207 INFO (SpringApplication.java:640)- The following 1 profile is active: "dev"
+2022-09-06 15:24:09,558 INFO (Log.java:170)- Logging initialized @1019ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-09-06 15:24:09,614 INFO (JettyServletWebServerFactory.java:166)- Server initialized with port: 8081
+2022-09-06 15:24:09,616 INFO (Server.java:375)- jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 1.8.0_331-b09
+2022-09-06 15:24:09,628 INFO (ContextHandler.java:2368)- Initializing Spring embedded WebApplicationContext
+2022-09-06 15:24:09,628 INFO (ServletWebServerApplicationContext.java:292)- Root WebApplicationContext: initialization completed in 400 ms
+2022-09-06 15:24:09,661 INFO (DefaultSessionIdManager.java:334)- DefaultSessionIdManager workerName=node0
+2022-09-06 15:24:09,661 INFO (DefaultSessionIdManager.java:339)- No SessionScavenger set, using defaults
+2022-09-06 15:24:09,662 INFO (HouseKeeper.java:132)- node0 Scavenging every 660000ms
+2022-09-06 15:24:09,666 INFO (ContextHandler.java:921)- Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@602c4656{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.2832580238828411885/],AVAILABLE}
+2022-09-06 15:24:09,667 INFO (Server.java:415)- Started @1128ms
+2022-09-06 15:24:09,806 INFO (ContextHandler.java:2368)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 15:24:09,806 INFO (FrameworkServlet.java:525)- Initializing Servlet 'dispatcherServlet'
+2022-09-06 15:24:09,806 INFO (FrameworkServlet.java:547)- Completed initialization in 0 ms
+2022-09-06 15:24:09,818 INFO (AbstractConnector.java:333)- Started ServerConnector@7bd69e82{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:24:09,818 INFO (JettyWebServer.java:172)- Jetty started on port(s) 8081 (http/1.1) with context path '/mydev'
+2022-09-06 15:24:09,825 INFO (StartupInfoLogger.java:61)- Started Demo1Application in 0.873 seconds (JVM running for 1.286)
+2022-09-06 15:24:12,008 INFO (MyTask.java:15)- 定时执行:1662449052008
+2022-09-06 15:24:15,010 INFO (MyTask.java:15)- 定时执行:1662449055010
+2022-09-06 15:24:18,006 INFO (MyTask.java:15)- 定时执行:1662449058006
+2022-09-06 15:24:21,006 INFO (MyTask.java:15)- 定时执行:1662449061006
+2022-09-06 15:24:22,557 INFO (AbstractConnector.java:383)- Stopped ServerConnector@7bd69e82{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2022-09-06 15:24:22,558 INFO (HouseKeeper.java:149)- node0 Stopped scavenging
+2022-09-06 15:24:22,559 INFO (ContextHandler.java:2368)- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-09-06 15:24:22,559 INFO (ContextHandler.java:1159)- Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@602c4656{application,/mydev,[file:///C:/Users/AMTK404/AppData/Local/Temp/jetty-docbase.8081.2832580238828411885/],STOPPED}
