@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyh.mapper.IEmpMapper">
+    <insert id="addEmp" parameterType="com.lyh.domain.Emp">
+        insert into emp(e_name,e_password,d_id) values(#{eId},#{ePassword},#{dId})
+    </insert>
+
+    <delete id="deleteEmp" parameterType="java.lang.Integer">
+        delete from emp where e_id = #{eId}
+    </delete>
+
+    <update id="updateEmp" parameterType="com.lyh.domain.Emp">
+        update emp set e_name = #{eName},e_password = #{ePassword},d_id = #{dId}
+        where e_id = #{eId}
+    </update>
+
+    <select id="getEmp" resultType="com.lyh.domain.Emp">
+        select e_id,e_name,d_Id from emp where e_id = #{eId}
+    </select>
+
+    <select id="getEmpList" resultType="com.lyh.domain.Emp">
+        select e_id,e_name,d_Id from emp where d_id = #{dId}
+    </select>
+</mapper>

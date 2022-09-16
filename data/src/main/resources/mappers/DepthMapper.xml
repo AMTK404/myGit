@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyh.mapper.IDepthMapper">
+    <insert id="addDepth" parameterType="com.lyh.domain.Depth">
+        insert into depth(d_name,u_id) values(#{dName},#{uId})
+    </insert>
+
+    <delete id="deleteDepth" parameterType="java.lang.Integer">
+        delete from depth where d_id = #{dId}
+    </delete>
+
+    <update id="updateDepth" parameterType="com.lyh.domain.Depth">
+        update depth set d_name = #{dName},u_id = #{uId}
+        where d_id = #{dId}
+    </update>
+
+    <select id="getDepth" resultType="com.lyh.domain.Depth">
+        select d_id,d_name,u_id from depth where d_id = #{dId}
+    </select>
+
+    <select id="getDepthList" resultType="com.lyh.domain.Depth">
+        select d_id,d_name,u_id from depth
+    </select>
+</mapper>
