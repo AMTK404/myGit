@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lyh.mapper.IDepthMapper">
     <insert id="addDepth" parameterType="com.lyh.domain.Depth">
-        insert into depth(d_name,u_id) values(#{dName},#{uId})
+        insert into depth(d_name,p_id) values(#{dName},#{pId})
     </insert>
 
     <delete id="deleteDepth" parameterType="java.lang.Integer">
@@ -11,15 +11,20 @@
     </delete>
 
     <update id="updateDepth" parameterType="com.lyh.domain.Depth">
-        update depth set d_name = #{dName},u_id = #{uId}
+        update depth set d_name = #{dName},p_id = #{pId}
         where d_id = #{dId}
     </update>
 
     <select id="getDepth" resultType="com.lyh.domain.Depth">
-        select d_id,d_name,u_id from depth where d_id = #{dId}
+        WITH RECURSIVE cte AS(
+            SELECT * FROM depth WHERE d_name = (select d_name from depth where d_id = #{dId})
+            UNION ALL
+            SELECT d.* FROM depth d, cte t WHERE d.p_id = t.d_id
+        )
+        SELECT * FROM cte;
     </select>
 
     <select id="getDepthList" resultType="com.lyh.domain.Depth">
-        select d_id,d_name,u_id from depth
+        select d_id,d_name,p_id from depth
     </select>
 </mapper>

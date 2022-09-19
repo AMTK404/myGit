@@ -7,6 +7,9 @@ import java.util.List;
 
 @Mapper
 public interface IEmpMapper {
+    //员工登录
+    Emp loginEmp(Emp emp);
+
     //增加员工
     int addEmp(Emp emp);
 
@@ -15,6 +18,9 @@ public interface IEmpMapper {
 
     //更新员工
     int updateEmp(Emp emp);
+
+    //重置密码
+    int resetPwd(int eId);
 
     //查询员工
     Emp getEmp(int id);

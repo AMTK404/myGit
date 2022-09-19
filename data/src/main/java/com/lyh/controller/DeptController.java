@@ -66,20 +66,11 @@ public class DeptController {
     //查询部门
     @GetMapping("/{id}")
     public Result getDepth(@PathVariable("id") int id){
-        String msg;
-        int code;
-        Depth depth = depthService.queryForId(id);
-        if(depth != null){
-            code = 1;
-            msg = "查询成功";
-        }else {
-            code = 0;
-            msg = "查询失败";
-        }
+        List<Depth> list = depthService.getDepth(id);
         Result res = new Result();
-        res.setCode(code);
-        res.setMsg(msg);
-        res.setData(depth);
+        res.setCode(1);
+        res.setMsg("查询结果");
+        res.setData(list);
         return res;
     }
 

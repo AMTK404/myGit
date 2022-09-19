@@ -13,6 +13,12 @@ public class EmpService {
     @Autowired
     IEmpMapper mapper;
 
+    //员工登录
+    public Emp loginEmp(Emp emp){
+        Emp e = mapper.loginEmp(emp);
+        return e;
+    }
+
     //增加员工
     public int addEmp(Emp emp){
         int i = mapper.addEmp(emp);
@@ -28,6 +34,12 @@ public class EmpService {
     //更新员工
     public int updateEmp(Emp emp){
         int i = mapper.updateEmp(emp);
+        return i;
+    }
+
+    //重置密码
+    public int resetPwd(int eId){
+        int i = mapper.resetPwd(eId);
         return i;
     }
 

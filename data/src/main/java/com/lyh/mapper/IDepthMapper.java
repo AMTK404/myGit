@@ -16,8 +16,8 @@ public interface IDepthMapper {
     //更新部门
     int updateDepth(Depth depth);
 
-    //查询部门
-    Depth getDepth(int id);
+    //查询部门及其下属部门
+    List<Depth> getDepth(int id);
 
     //显示所有部门
     List<Depth> getDepthList();

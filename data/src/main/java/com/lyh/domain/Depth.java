@@ -6,5 +6,5 @@ import lombok.Data;
 public class Depth {
     private int dId;
     private String dName;
-    private int uId;
+    private int pId;
 }

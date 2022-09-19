@@ -1,6 +1,5 @@
 package com.lyh.controller;
 
-import com.lyh.domain.Depth;
 import com.lyh.domain.Emp;
 import com.lyh.domain.Result;
 import com.lyh.service.EmpService;
@@ -15,6 +14,25 @@ public class EmpController {
 
     @Autowired
     EmpService service;
+
+    //员工登录
+    @PostMapping("/login")
+    public Result login(@RequestBody Emp emp){
+        int code;
+        String msg;
+        Emp e = service.loginEmp(emp);
+        if (e != null){
+            code = 1;
+            msg = "登录成功";
+        }else {
+            code = 0;
+            msg = "登录失败";
+        }
+        Result result = new Result();
+        result.setCode(code);
+        result.setMsg(msg);
+        return result;
+    }
 
     //增加员工
     @PostMapping
@@ -48,7 +66,7 @@ public class EmpController {
         return res;
     }
 
-    //更新部门
+    //更新员工
     @PutMapping
     public Result updateEmp(@RequestBody Emp emp){
         String msg;
@@ -64,7 +82,23 @@ public class EmpController {
         return res;
     }
 
-    //查询部门
+    //重置密码
+    @PutMapping("/{eId}")
+    public Result resetPwd(@PathVariable("eId") int eId){
+        String msg;
+        int i = service.resetPwd(eId);
+        if (i == 1){
+            msg = "重置成功，当前密码为123456";
+        }else {
+            msg = "重置失败";
+        }
+        Result res = new Result();
+        res.setCode(i);
+        res.setMsg(msg);
+        return res;
+    }
+
+    //查询员工
     @GetMapping("/{id}")
     public Result getEmp(@PathVariable("id") int id){
         String msg;
@@ -84,8 +118,8 @@ public class EmpController {
         return res;
     }
 
-    //查询所有部门
-    @GetMapping("/{dId}")
+    //查询该部门所有员工
+    @GetMapping("depth/{dId}")
     public Result getEmpList(@PathVariable("dId") int dId){
         List<Emp> list = service.getEmpList(dId);
         String msg;

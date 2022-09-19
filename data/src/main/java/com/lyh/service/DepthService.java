@@ -31,10 +31,10 @@ public class DepthService {
         return result;
     }
 
-    //查询部门
-    public Depth queryForId(int id){
-        Depth depth = mapper.getDepth(id);
-        return depth;
+    //查询部门及其下属部门
+    public List<Depth> getDepth(int id){
+        List<Depth> list = mapper.getDepth(id);
+        return list;
     }
 
     //显示所有部门
